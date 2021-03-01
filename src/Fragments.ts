@@ -12,6 +12,7 @@ export const ProductPageFragment = graphql`
 `
 export const HeroFragment = graphql`
   fragment HeroFragment on ContentfulHero {
+    __typename
     trackingName
     imageUrl {
       fluid(maxWidth: 48, maxHeight: 48, resizingBehavior: SCALE) {
