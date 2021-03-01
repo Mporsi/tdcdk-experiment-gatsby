@@ -9,9 +9,9 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "react",
-    "include": [
-      "src",
-      "src/types.d.ts"
-    ]
-  }
+  },
+  "include": [
+    "src",
+    "src/types.d.ts"
+  ]
 }
