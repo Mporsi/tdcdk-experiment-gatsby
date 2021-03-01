@@ -1,0 +1,21 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(25, 34, 40, 0.8);
+  z-index: 1000;
+  height: 100%;
+  overflow-y: auto;
+}
+.modal-body {
+  height: rem(200);
+  width: rem(200);
+  background-color: lightsalmon;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+}

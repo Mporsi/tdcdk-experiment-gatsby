@@ -8,7 +8,13 @@
     "url": "https://github.com/contentful/starter-gatsby-blog/issues"
   },
   "dependencies": {
+    "@tdcerhverv/checkbox": "^1.4.1",
+    "@tdcerhverv/heading": "^2.5.1",
     "@tdcerhverv/mui-theme": "^2.0.0-alpha.2",
+    "@tdcerhverv/paragraph": "^2.0.0",
+    "@tdcerhverv/select": "^2.2.1",
+    "@tdcerhverv/text-input": "^4.8.0",
+    "@tdcerhverv/textarea": "^2.4.1",
     "gatsby": "^2.23.9",
     "gatsby-image": "^2.4.8",
     "gatsby-plugin-react-helmet": "^3.3.5",
@@ -17,18 +23,22 @@
     "gatsby-theme-material-ui": "^1.0.13",
     "gatsby-transformer-remark": "^2.8.18",
     "gatsby-transformer-sharp": "^2.5.6",
+    "html-react-parser": "^1.2.4",
     "lodash": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^5.2.0",
+    "use-query-params": "^1.2.0"
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.0",
-    "netlify-cli": "^2.54.0",
+    "@types/react-router-dom": "^5.1.7",
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.21.5",
+    "netlify-cli": "^2.54.0",
     "prettier": "^2.2.1"
   },
   "engines": {

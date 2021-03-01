@@ -1,0 +1,50 @@
+@import 'node_modules/@tdcerhverv/parrotfish/dist/colors-design-token';
+@import 'node_modules/@tdcerhverv/sass-utils/util';
+
+.spinner {
+  position: relative;
+  width: inherit;
+  height: inherit;
+}
+
+.spinner__animation {
+  animation: spinner-rotate 2s infinite linear;
+  width: inherit;
+  height: inherit;
+
+  .spinner__dot1,
+  .spinner__dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: map-get($theme, 'primary-dark');
+    border-radius: 100%;
+    animation: spinner-bounce 2s infinite ease-in-out;
+  }
+
+  .spinner__dot2 {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+  }
+}
+
+//Animation
+@keyframes spinner-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}

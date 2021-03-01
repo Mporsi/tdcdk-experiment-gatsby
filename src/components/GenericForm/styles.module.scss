@@ -1,0 +1,152 @@
+@import 'node_modules/@tdcerhverv/parrotfish/dist/colors-design-token';
+@import 'node_modules/@tdcerhverv/sass-utils/util';
+@import 'src/assets/css/helpers/target-ie';
+
+$svgDivWidth: rem(18);
+$svgDivMarginLeft: rem(12);
+
+.svg-div {
+  height: 100%;
+  width: $svgDivWidth;
+  margin-left: $svgDivMarginLeft;
+  position: relative;
+  margin-top: 2rem;
+}
+.input-text-div {
+  display: inline-block;
+  width: calc(100% - #{$svgDivWidth} - #{$svgDivMarginLeft});
+  position: relative;
+}
+.svg {
+  fill: map-get($theme, 'primary-light');
+}
+.info-hover-box {
+  width: rem(175);
+  position: absolute;
+  left: rem(-72);
+  top: rem(32);
+  color: white;
+  background: map-get($theme, 'black');
+  display: none;
+  text-align: center;
+  border-radius: rem(4);
+  font-size: 0.8rem;
+
+  &::before {
+    content: '';
+    background-color: map-get($theme, 'black');
+    position: absolute;
+    width: rem(10);
+    height: rem(10);
+    right: 50%;
+    top: rem(-5);
+    transform: rotate(45deg);
+    @media(max-width: rem(700)) {
+      right: rem(20)
+    }
+  }
+  @media(max-width: rem(700)) {
+    left: rem(-140)
+  }
+}
+
+.svg:hover ~ .info-hover-box {
+  display: block;
+  z-index: 11;
+}
+
+.info-hover-box-text {
+  margin: auto;
+  padding: rem(12);
+  color: white;
+}
+
+.form-wrapper {
+  position: relative;
+  max-width: rem(900);
+}
+
+.input-wrapper {
+  margin-bottom: 12px;
+  display: flex;
+}
+.pending-icon {
+  width: 20px;
+}
+.modal-wrapper {
+  z-index: 10;
+  background-color: white;
+  margin: auto;
+  margin-top: 25vh;
+  max-width: 1000px;
+  padding: 60px;
+}
+.modal-content {
+  margin: auto;
+  max-width: 700px;
+  text-align: center;
+}
+.modal-icon-success {
+  width: rem(45);
+  fill: map-get($theme, 'success');
+  margin-bottom: 40px;
+}
+.modal-icon-error {
+  width: rem(45);
+  fill: map-get($theme, 'error');
+  margin-bottom: 40px;
+}
+.modal-title {
+  padding-bottom: 0;
+}
+.modal-paragraph {
+  font-size: 16px;
+}
+
+.modal-button {
+  margin: auto;
+  margin-top: 40px;
+}
+
+.submit-button {
+  display: inline-grid;
+  grid-template-columns: auto;
+  column-gap: 10px;
+
+  @include target-ie {
+    display: -ms-inline-grid;
+    -ms-grid-columns: 1fr;
+  }
+
+  &__loading {
+    grid-template-columns: auto auto;
+
+    @include target-ie {
+      display: -ms-inline-grid;
+      -ms-grid-columns: 1fr 1fr;
+    }
+
+    .submit-button-spinner {
+      display: block;
+    }
+  }
+}
+
+.submit-button-spinner {
+  height: rem(20);
+  width: rem(20);
+  margin-top: rem(10);
+  display: none;
+
+  @include target-ie {
+    margin: auto auto;
+    -ms-grid-column: 2;
+  }
+}
+
+.submit-button-text {
+  height: rem(40);
+  width: rem(40);
+  line-height: rem(40);
+  -ms-grid-column: 1;
+}
