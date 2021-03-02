@@ -1,0 +1,172 @@
+@import "node_modules/@tdcerhverv/parrotfish/dist/colors-design-token";
+@import "node_modules/@tdcerhverv/sass-utils/_util";
+@import "src/assets/css/helpers/mq";
+
+.footer {
+  background-color: map-get($theme, "black");
+  margin: 0;
+  padding: rem(24) rem(24) 0;
+
+  @include mq($from: s-screen) {
+    padding: rem(24) rem(48) 0;
+  }
+
+  .footer-primary-container {
+    display: block;
+
+    @include mq($from: m-screen) {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+  }
+
+  .footer-section {
+    min-width: rem(300);
+  }
+
+  .footer-section-title {
+    color: map-get($theme, "grey-darkest");
+    padding-top: rem(48);
+  }
+
+  .footer-section-list-container {
+    padding-left: 0;
+  }
+
+  .list-item {
+    list-style-type: none;
+    margin: rem(8) 0;
+    font-size: rem(15);
+  }
+
+  .list-item-link,
+  .cookie-link {
+    color: map-get($theme, "grey-medium-dark");
+    line-height: rem(24);
+    font-weight: 100;
+
+    &:hover,
+    &:focus {
+      color: map-get($theme, "white");
+
+      .list-item-icon {
+        fill: map-get($theme, "white");
+      }
+    }
+
+    &:active {
+      color: map-get($theme, "primary-light");
+
+      .list-item-icon {
+        fill: map-get($theme, "primary-light");
+      }
+    }
+  }
+
+  .list-item-text {
+    color: map-get($theme, "grey-darkest");
+    margin: 0;
+  }
+
+  .list-item-icon {
+    fill: map-get($theme, "grey-medium-dark");
+    width: rem(25);
+    height: rem(25);
+    margin-right: rem(10);
+    vertical-align: middle;
+
+    &:hover,
+    &:focus {
+      fill: map-get($theme, "white");
+    }
+
+    &:active {
+      fill: map-get($theme, "primary-dark");
+    }
+  }
+
+  .footer-secondary-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: rem(32);
+    padding-bottom: rem(48);
+
+    @include mq($from: m-screen) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .cookie-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: baseline;
+
+    @include mq($from: m-screen) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .copyright-text {
+    color: map-get($theme, "grey-darkest");
+    margin: 0;
+    padding-bottom: rem(24);
+
+    @include mq($from: m-screen) {
+      padding-bottom: 0;
+    }
+  }
+
+  .notice-text {
+    color: map-get($theme, "grey-medium-dark");
+    font-weight: 300;
+    font-size: 1rem;
+    margin: 0;
+    padding-bottom: rem(24);
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .cookie-link {
+    padding-bottom: rem(24);
+
+    @include mq($from: m-screen) {
+      padding-left: rem(24);
+      padding-bottom: 0;
+    }
+  }
+
+  .logo {
+    width: rem(200);
+    height: rem(32);
+    align-self: flex-end;
+    z-index: 1;
+
+    svg {
+      width: 100%;
+      position: relative;
+      z-index: 0; // setting lower stack order than anchor to capture anchor element attributes for GA tracking
+    }
+
+    path {
+      // block clicks on path sub-elements in logo so link will still work
+      pointer-events: none;
+    }
+  }
+
+  .section-title {
+    color: map-get($theme, "grey-darkest");
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    padding-bottom: .5rem;
+  }
+}

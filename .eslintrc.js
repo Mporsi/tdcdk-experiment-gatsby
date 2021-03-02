@@ -25,5 +25,8 @@ module.exports = {
     'react/prop-types': 0,
     'react/display-name': 0,
     '@typescript-eslint/ban-ts-ignore': 0,
+    '@typescript-eslint/camelcase':0,
+    '@typescript-eslint/class-name-casing':0,
+    '@typescript-eslint/interface-name-prefix':0
   },
 }

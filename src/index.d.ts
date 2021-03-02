@@ -1,70 +1,66 @@
 type SiteData = {
-    site: {
-        siteMetadata: {
-            title: string
-        }
+  site: {
+    siteMetadata: {
+      title: string
     }
+  }
 }
 
 // Sitecore Nonsense:
-declare module '*.svg';
-declare module '*.jpg';
-declare module '*.png';
-declare module '*.scss';
-declare module '*.css';
+declare module '*.svg'
+declare module '*.jpg'
+declare module '*.png'
+declare module '*.scss'
+declare module '*.css'
 
 interface GaEvent {
-    event: string;
-    category: string;
-    action: string;
-    label: string;
-    value: number;
+  event: string
+  category: string
+  action: string
+  label: string
+  value: number
 }
 
 interface Window {
-    dataLayer: Array<GaEvent>;
+  dataLayer: Array<GaEvent>
 }
 
 // Sitecore types
 interface IFieldValueString {
-    value: string;
+  value: string
 }
 interface IFIeldValueLink {
-    value: {
-        href: string;
-        linktype: string;
-        url: string;
-    };
+  value: ILink
 }
 
 interface IFieldValueBoolean {
-    value: boolean;
+  value: boolean
 }
 
 interface IBaseSitecoreRendering {
-    uid: string;
-    componentName: string;
-    dataSource: string;
-    params: string;
+  uid: string
+  componentName: string
+  dataSource: string
+  params: string
 }
 
 interface IStandardScItem extends IIdItem {
-    name: string;
-    displayName: string;
-    templateId: string;
+  name: string
+  displayName: string
+  templateId: string
 }
 
 interface IIdItem {
-    id: string;
+  id: string
 }
 
 interface ILink {
-    href: string;
-    linktype: string;
-    url: string;
-    text: string;
+  href: string
+  linktype: string
+  url: string
+  text: string
 }
 
 interface IButtonLink {
-    value: ILink;
+  value: ILink
 }
