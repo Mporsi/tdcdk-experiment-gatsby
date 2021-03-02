@@ -15,7 +15,7 @@
     "@tdcerhverv/select": "^2.2.1",
     "@tdcerhverv/text-input": "^4.8.0",
     "@tdcerhverv/textarea": "^2.4.1",
-    "gatsby": "^2.23.9",
+    "gatsby": "^2.25.0",
     "gatsby-image": "^2.4.8",
     "gatsby-plugin-react-helmet": "^3.3.5",
     "gatsby-plugin-sass": "^3.2.0",

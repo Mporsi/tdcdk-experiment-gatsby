@@ -33,7 +33,6 @@ export const HeroFragment = graphql`
 // eslint-disable-next-line @typescript-eslint/camelcase
 export const GatsbyContentfulFluid_tracedSVG = graphql`
   fragment GatsbyContentfulFluid_tracedSVG on ContentfulFluid {
-    tracedSVG
     aspectRatio
     src
     srcSet
