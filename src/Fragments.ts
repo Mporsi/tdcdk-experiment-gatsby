@@ -16,7 +16,7 @@ export const HeroFragment = graphql`
     trackingName
     imageUrl {
       fluid(maxWidth: 48, maxHeight: 48, resizingBehavior: SCALE) {
-        ...GatsbyContentfulFluid_tracedSVG
+        ...GatsbyContentfulFluid
       }
     }
     buttonAction {
@@ -27,15 +27,5 @@ export const HeroFragment = graphql`
     headline
     productText
     mainText
-  }
-`
-
-// eslint-disable-next-line @typescript-eslint/camelcase
-export const GatsbyContentfulFluid_tracedSVG = graphql`
-  fragment GatsbyContentfulFluid_tracedSVG on ContentfulFluid {
-    aspectRatio
-    src
-    srcSet
-    sizes
   }
 `
