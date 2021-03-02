@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
 import Footer from './Footer'
 import { getFooterContent } from './services/getFooterContent'
 
@@ -20,5 +19,5 @@ export default function Root() {
     })
   }, [])
 
-  return <Router>{footerContent && <Footer {...footerContent} />}</Router>
+  return <Footer {...footerContent} />
 }
