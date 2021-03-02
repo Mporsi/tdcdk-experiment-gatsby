@@ -1,0 +1,11 @@
+/*
+Usage:
+@include target-ie {
+  background: tomato;
+}
+*/
+@mixin target-ie {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}

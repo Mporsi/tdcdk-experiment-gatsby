@@ -1,36 +1,16 @@
 import React, { useState } from 'react'
 import { TextInput } from '@tdcerhverv/text-input'
 import { TextArea } from '@tdcerhverv/textarea'
-import InfoSVG from '@tdcerhverv/parrotfish/dist/icons/Icons/Info.svg'
-import { Icon } from '@tdcerhverv/icon'
 import * as s from './styles.module.scss'
 import InputFieldTypesEnum from './inputFieldTypesEnum'
 import { IGenericFormField } from './types'
 import { Paragraph } from '@tdcerhverv/paragraph'
 
 interface IInputFieldProps extends IGenericFormField {
-  onChange: ({
-    value,
-    templateId,
-    i,
-    required,
-  }: {
-    value: unknown
-    templateId: unknown
-    i: unknown
-    required: unknown
-  }) => void
-  onBlur: ({
-    value,
-    templateId,
-    i,
-    required,
-  }: {
-    value: unknown
-    templateId: unknown
-    i: unknown
-    required: unknown
-  }) => void
+  //@ts-ignore
+  onChange: ({ value, templateId, i, required }) => void
+  //@ts-ignore
+  onBlur: ({ value, templateId, i, required }) => void
   i: number
   required: boolean
   input: string
@@ -98,7 +78,6 @@ export default function InputField(props: IInputFieldProps): JSX.Element {
 
       {Field_ShowHint?.value && (
         <div className={s.svgDiv}>
-          <Icon icon={InfoSVG} size={16} className={s.svg} id={s.svg} />
           <div id={s.infoHoverBox} className={s.infoHoverBox}>
             <Paragraph className={s.infoHoverBoxText}>{Field_HintText?.value}</Paragraph>
           </div>

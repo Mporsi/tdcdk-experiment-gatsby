@@ -5,7 +5,9 @@ import { IContactFlowRendering, IContactFlowStep } from './types'
 import { IGenericForm } from '../GenericForm/types'
 
 import * as s from './styles.module.scss'
-import { Select } from '@tdcerhverv/select'
+// import { Select } from '@tdcerhverv/select'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
 import { H2, H3, H4 } from '@tdcerhverv/heading'
 import { Paragraph } from '@tdcerhverv/paragraph'
 
@@ -13,6 +15,7 @@ import { useQueryParams, StringParam } from 'use-query-params'
 import parse from 'html-react-parser'
 
 export default function ContactFlow(props: IContactFlowRendering): ReactElement {
+  console.log('PROPS', props)
   if (!props || !props.fields) {
     return <h1>No Props Found</h1>
   }
@@ -99,11 +102,13 @@ export default function ContactFlow(props: IContactFlowRendering): ReactElement 
     return (
       <div className={s.dropdown}>
         <Select error={false} value={Number(chosenForm)} onChange={chooseForm} className={s.formSelect}>
-          {Number(chosenForm) === -1 && <option value={-1}>{ContactFlow_Dropdown_Default.value}</option>}
+          {Number(chosenForm) === -1 && <MenuItem value={-1}>{ContactFlow_Dropdown_Default.value}</MenuItem>}
           {tile?.fields?.children?.map((child: IContactFlowStep | IGenericForm, i) => {
-            ;<option key={i} value={i}>
-              {(child as IContactFlowStep)?.fields?.item?.ContactFlow_Step_Title?.value}
-            </option>
+            return (
+              <MenuItem key={i} value={i}>
+                {(child as IContactFlowStep)?.fields?.item?.ContactFlow_Step_Title?.value}
+              </MenuItem>
+            )
           })}
         </Select>
       </div>

@@ -27,7 +27,7 @@
     "html-react-parser": "^1.2.4",
     "lodash": "^4.17.15",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^5.2.0",
     "sass": "^1.32.8",
