@@ -17,23 +17,23 @@ export default function Footer(Footer: IFooterProps) {
   const footerSections = Footer.fields?.children ?? []
 
   return (
-    <footer className={s.footer} data-cy="footer">
+    <footer  data-cy="footer">
       {footerItem?.FooterSettings_Notice_text && (
-        <div className={s.noticeText}>{parse(footerItem.FooterSettings_Notice_text.value)}</div>
+        <div >{parse(footerItem.FooterSettings_Notice_text.value)}</div>
       )}
-      <div className={s.footerPrimaryContainer}>
+      <div >
         {footerSections.map((footerSection: IFooterCategory, i: number) => (
           <FooterSection {...footerSection} key={i} />
         ))}
       </div>
-      <div className={s.footerSecondaryContainer}>
-        <div className={s.cookieContainer}>
-          <p className={s.copyrightText}>{footerItem?.FooterSettings_Copyright_text?.value}</p>
-          <a className={s.cookieLink} href={footerItem?.FooterSettings_CookieLink?.value?.href}>
+      <div >
+        <div >
+          <p >{footerItem?.FooterSettings_Copyright_text?.value}</p>
+          <a  href={footerItem?.FooterSettings_CookieLink?.value?.href}>
             {footerItem?.FooterSettings_CookieLink?.value?.text ?? 'no FooterSettings_CookieLink'}
           </a>
         </div>
-        <a className={s.logo} href={footerItem?.FooterSettings_LogoLink?.value?.href ?? ''}></a>
+        <a  href={footerItem?.FooterSettings_LogoLink?.value?.href ?? ''}></a>
       </div>
     </footer>
   )

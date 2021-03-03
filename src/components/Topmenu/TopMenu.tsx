@@ -127,7 +127,7 @@ export default function TopMenu(props: ITopMenu): JSX.Element {
   const RenderPrimaryNavLink = ({ className, link, tabIndex }: INavElement): JSX.Element => {
     const { href, text } = link?.fields?.TopMenu_Primary_Nav_Link?.value ?? { href: '', text: '' }
     return (
-      <a className={className} tabIndex={tabIndex} href={href ?? ''} onClick={handleNavLinkClick}>
+      <a  tabIndex={tabIndex} href={href ?? ''} onClick={handleNavLinkClick}>
         <span>{text}</span>
       </a>
     )
@@ -137,7 +137,7 @@ export default function TopMenu(props: ITopMenu): JSX.Element {
     const { TopMenu_Secondary_Title } = link?.fields ?? { TopMenu_Secondary_Title: { value: '' } }
     const { href } = link?.fields?.TopMenu_Secondary_Nav_Link?.value ?? { href: '' }
     return (
-      <a className={className} tabIndex={tabIndex} href={href ?? ''} onClick={handleNavLinkClick}>
+      <a  tabIndex={tabIndex} href={href ?? ''} onClick={handleNavLinkClick}>
         <>{TopMenu_Secondary_Title?.value}</>
       </a>
     )
@@ -152,7 +152,7 @@ export default function TopMenu(props: ITopMenu): JSX.Element {
     }
 
     return (
-      <button name="menu_dropdown" tabIndex={tabIndex} onClick={() => handleDropDownClick(title)} className={className}>
+      <button name="menu_dropdown" tabIndex={tabIndex} onClick={() => handleDropDownClick(title)} >
         <span>{title}</span>
       </button>
     )
@@ -167,18 +167,18 @@ export default function TopMenu(props: ITopMenu): JSX.Element {
   }`
 
   const MobileLevelOneNav = () => (
-    <div className={s.burgerMenu}>
+    <div >
       {primaryNavLinks.map((link) =>
         link?.fields?.children ? (
           <RenderDropDownNavTitle
-            className={s?.burgerMenuItem}
+            
             tabIndex={isMobileLevelTwoExpanded ? -1 : 0}
             key={link?.id}
             link={link}
           />
         ) : (
           <RenderPrimaryNavLink
-            className={s.burgerMenuItem}
+            
             tabIndex={isMobileLevelTwoExpanded ? -1 : 0}
             key={link.id}
             link={link}
@@ -187,7 +187,7 @@ export default function TopMenu(props: ITopMenu): JSX.Element {
       )}
       {secondaryNavLinks.map((link) => (
         <RenderSecondaryNavLink
-          className={s.burgerMenuItem}
+          
           tabIndex={isMobileLevelTwoExpanded ? -1 : 0}
           key={link.id}
           link={link}
@@ -198,39 +198,39 @@ export default function TopMenu(props: ITopMenu): JSX.Element {
 
   return (
     <>
-      <header className={s.topmenu}>
-        <div className={s.primaryNav}>
+      <header >
+        <div >
           {RenderTopLogo(s.logo, props?.fields?.item?.TopMenu_LogoLink)}
           {primaryNavLinks.map((link, i) =>
             link?.fields?.children ? (
-              <RenderDropDownNavTitle className={s.topmenuLink} key={i} link={link} />
+              <RenderDropDownNavTitle  key={i} link={link} />
             ) : (
-              <RenderPrimaryNavLink className={s.topmenuLink} key={link.id} link={link} />
+              <RenderPrimaryNavLink  key={link.id} link={link} />
             ),
           )}
         </div>
-        <div className={s.secondaryNav}>
-          <button name="search_button" onClick={toggleSearch} className={s.searchIconWrapper}>
+        <div >
+          <button name="search_button" onClick={toggleSearch} >
             SearchButton
           </button>
-          <button name="mobile_burger_menu" onClick={toggleBurgerMenu} className={s.burgerMenuIconWrapper}>
+          <button name="mobile_burger_menu" onClick={toggleBurgerMenu} >
             mobile_burger_menu
           </button>
           {secondaryNavLinks!.map((link) => (
-            <RenderSecondaryNavLink className={s.topmenuLink} key={link.id} link={link} />
+            <RenderSecondaryNavLink  key={link.id} link={link} />
           ))}
         </div>
       </header>
-      <div onClick={closeMenus} className={menuOpenClassName} id="modal-background">
+      <div onClick={closeMenus}  id="modal-background">
         {burgerExpanded ? (
           <>
             <MobileLevelOneNav />
-            <div className={dropDownMenuClass}>
+            <div >
               {burgerExpanded && (
                 <TextButton
                   tabIndex={isMobileLevelTwoExpanded ? 0 : -1}
                   onClick={handleMobileBack}
-                  className={s.backHeadline}
+                  
                 >
                   Tilbage
                 </TextButton>
@@ -240,7 +240,7 @@ export default function TopMenu(props: ITopMenu): JSX.Element {
           </>
         ) : (
           !burgerExpanded && (
-            <div className={s.dropdownContainer}>
+            <div >
               <RenderExpandedMenu menuItems={menuItems} canTabTo={productsExpanded} />
             </div>
           )

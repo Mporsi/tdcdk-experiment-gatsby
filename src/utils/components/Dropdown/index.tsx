@@ -98,13 +98,13 @@ export default function Dropdown({
 
   const Menu = (): JSX.Element => {
     return (
-      <div data-jsidentifier={dropdownId} className={menuClassName}>
+      <div data-jsidentifier={dropdownId} >
         {suggestions.map((item, i) => {
           return (
             <div
               data-jsidentifier={dropdownId}
               onMouseDown={() => onSelectHandler(item)}
-              className={`${suggestionClassName} ${i === markedSuggestion && highlightedSuggestionClassName}`}
+              
               key={i}
             >
               {displayValueFromItem(item)}
@@ -125,7 +125,7 @@ export default function Dropdown({
         placeholder={placeholder}
         onKeyDown={(e) => keyboardNavigation(e)}
         disabled={disabled}
-        className={inputClassName}
+        
         onChange={onChange}
         onFocus={onInputFocus}
         value={input}

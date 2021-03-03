@@ -10,7 +10,6 @@ function ContactFlowData(): IContactFlowRendering {
   return (Data.sitecore.route.placeholders['erhverv-main-content'][0] as unknown) as IContactFlowRendering
 }
 
-console.log(ContactFlowData())
 export default function SkrivTilOs() {
   return (
     <>

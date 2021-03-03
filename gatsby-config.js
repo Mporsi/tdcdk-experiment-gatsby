@@ -46,5 +46,12 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/templates/Layout.tsx`),
+      },
+    },
+    'gatsby-mfe-test',
   ],
 }

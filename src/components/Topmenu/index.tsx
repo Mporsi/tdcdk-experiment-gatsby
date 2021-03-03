@@ -10,5 +10,5 @@ export default function Root() {
       setContent(data)
     })
   }, [])
-  return content ? <TopMenu {...content} /> : <></>
+  return content ? <TopMenu {...content} /> : <>THIS SHOULD BE A TOP MENU BUT HAS NO CONTENT</>
 }

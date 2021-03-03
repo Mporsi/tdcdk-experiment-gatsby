@@ -16,7 +16,7 @@ export default function Modal(props: IModal): ReactElement {
         }
     };
     const ModalNode = (
-        <div id="modal-background" className={s.modal} onClick={closeModal}>
+        <div id="modal-background"  onClick={closeModal}>
             {children}
         </div>
     );

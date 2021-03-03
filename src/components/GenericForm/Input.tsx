@@ -61,8 +61,8 @@ export default function InputField(props: IInputFieldProps): JSX.Element {
   const Field = findFieldType(templateId)
 
   return (
-    <div className={s.inputWrapper}>
-      <div className={s.inputTextDiv}>
+    <div >
+      <div >
         <Field
           placeholder={Field_PlaceholderText?.value || ''}
           labelText={`${Field_Title.value} ${!required ? '(Valgfri)' : ''}`}
@@ -77,9 +77,9 @@ export default function InputField(props: IInputFieldProps): JSX.Element {
       </div>
 
       {Field_ShowHint?.value && (
-        <div className={s.svgDiv}>
-          <div id={s.infoHoverBox} className={s.infoHoverBox}>
-            <Paragraph className={s.infoHoverBoxText}>{Field_HintText?.value}</Paragraph>
+        <div >
+          <div id={s.infoHoverBox} >
+            <Paragraph >{Field_HintText?.value}</Paragraph>
           </div>
         </div>
       )}

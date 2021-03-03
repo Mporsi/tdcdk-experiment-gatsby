@@ -12,7 +12,7 @@ export interface ILink {
 export default function Link(props: ILink): ReactElement {
   const { url, children, className } = props
   return (
-    <ReactRouterLink className={className} to={url}>
+    <ReactRouterLink  to={url}>
       {children}
     </ReactRouterLink>
   )

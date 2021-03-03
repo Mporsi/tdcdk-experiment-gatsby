@@ -1,6 +1,8 @@
 const Promise = require('bluebird')
+const { words } = require('lodash')
 const path = require('path')
 
+const emptyLayoutPages = ['/test/', '/hateLayoutPage/', '/app/dashboard/']
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -41,4 +43,13 @@ exports.createPages = ({ graphql, actions }) => {
       }),
     )
   })
+}
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions
+
+  if (emptyLayoutPages.includes(page.path)) {
+    page.context.layout = 'empty'
+    createPage(page)
+  }
 }

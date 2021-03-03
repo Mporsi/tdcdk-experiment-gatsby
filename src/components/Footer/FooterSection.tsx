@@ -17,11 +17,11 @@ export default function FooterSection(footerSection: IFooterCategory): ReactElem
 
     if (footerSection.templateId === TemplateIdEnum.FOOTER_SECTION) {
       return (
-        <div className={s.footerSection}>
+        <div >
           {footerSectionTitle && (
-            <H4 className={s.sectionTitle}>{footerSection?.fields?.item?.FooterSection_Title?.value}</H4>
+            <H4 >{footerSection?.fields?.item?.FooterSection_Title?.value}</H4>
           )}
-          <ul className={s.footerSectionListContainer}>
+          <ul >
             {footerSection?.fields?.children?.map((footerSection) => (
               <div key={footerSection.id}>Link to {footerSection?.fields?.FooterSection_Link?.value?.text}</div>
             ))}

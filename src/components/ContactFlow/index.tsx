@@ -86,10 +86,10 @@ export default function ContactFlow(props: IContactFlowRendering): ReactElement 
     const chosen = chosenTile === i
     const { ContactFlow_Step_Title: title, ContactFlow_Step_Description: description } = tile?.fields?.item
     return (
-      <div onClick={() => chooseTile(i)} className={`${s.tile} ${chosen && s.tileChosen}`} key={i}>
-        <div className={s.tileText}>
-          <H4 className={s.tileHeader}>{title?.value}</H4>
-          <Paragraph className={s.tileDescription} weight="regular">
+      <div onClick={() => chooseTile(i)} >
+        <div >
+          <H4 >{title?.value}</H4>
+          <Paragraph  weight="regular">
             {description.value}
           </Paragraph>
         </div>
@@ -100,8 +100,8 @@ export default function ContactFlow(props: IContactFlowRendering): ReactElement 
   const RenderDropDown = (tile: IContactFlowStep) => {
     const { ContactFlow_Dropdown_Default } = tile?.fields?.item
     return (
-      <div className={s.dropdown}>
-        <Select error={false} value={Number(chosenForm)} onChange={chooseForm} className={s.formSelect}>
+      <div >
+        <Select error={false} value={Number(chosenForm)} onChange={chooseForm} >
           {Number(chosenForm) === -1 && <MenuItem value={-1}>{ContactFlow_Dropdown_Default.value}</MenuItem>}
           {tile?.fields?.children?.map((child: IContactFlowStep | IGenericForm, i) => {
             return (
@@ -117,9 +117,9 @@ export default function ContactFlow(props: IContactFlowRendering): ReactElement 
 
   const RenderBlueBox = () => {
     return (
-      <div className={s.blueBoxWrapper}>
+      <div >
         {(blueBox.headline || blueBox.body) && (
-          <div className={s.blueBoxContent}>
+          <div >
             <H3>{blueBox.headline}</H3>
             <div dangerouslySetInnerHTML={{ __html: blueBox.body }} />
           </div>
@@ -131,8 +131,8 @@ export default function ContactFlow(props: IContactFlowRendering): ReactElement 
     const stepTwoIsAList = step?.fields?.children?.length > 1
     const genericFormProps = step.fields.children[0].fields.children[0] as IGenericForm
     return (
-      <div className={s.stepTwo}>
-        <div className={s.dropdownSectionWrapper}>
+      <div >
+        <div >
           {stepTwoIsAList ? (
             <>
               <H4>
@@ -160,7 +160,7 @@ export default function ContactFlow(props: IContactFlowRendering): ReactElement 
     const stepThreeIsAForm = stepThreeFormOrInfo.templateId === ContactFlowEnum.FORM
     if (stepThreeIsAForm) {
       return (
-        <div className={s.stepThreeWrapper}>
+        <div >
           <H4>
             3. <span>{ContactFow_Form_Title.value}</span>
           </H4>
@@ -173,7 +173,7 @@ export default function ContactFlow(props: IContactFlowRendering): ReactElement 
       } = stepThreeFormOrInfo as IContactFlowStep
 
       return (
-        <div className={s.stepThreeWrapper}>
+        <div >
           <H4> {ContactFlow_Step_Info_Title?.value} </H4>
           <div>{ContactFlow_Step_Info_Body?.value && parse(ContactFlow_Step_Info_Body.value)}</div>
         </div>
@@ -182,16 +182,16 @@ export default function ContactFlow(props: IContactFlowRendering): ReactElement 
   }
 
   return (
-    <div className={s.componentWrapper}>
-      <div className={s.innerComponentWrapper}>
-        <div className={s.componentHeader}>
-          <H2 className={s.header}>{ContactFlow_Title.value}</H2>
-          <Paragraph className={s.contactFlowDescription} weight="regular">
+    <div >
+      <div >
+        <div >
+          <H2 >{ContactFlow_Title.value}</H2>
+          <Paragraph  weight="regular">
             {ContactFlow_Description.value}
           </Paragraph>
         </div>
-        <H4 className={s.tilesHeader}>1. {ContactFlow_Steps_Title.value}</H4>
-        <div className={s.tiles}>{tiles.map((el: IContactFlowStep, i: number) => RenderTile(el, i))}</div>
+        <H4 >1. {ContactFlow_Steps_Title.value}</H4>
+        <div >{tiles.map((el: IContactFlowStep, i: number) => RenderTile(el, i))}</div>
         {chosenTile > -1 && RenderStepTwo(tiles[chosenTile])}
       </div>
     </div>

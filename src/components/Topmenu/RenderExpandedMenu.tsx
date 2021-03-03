@@ -40,8 +40,8 @@ export default function RenderExpandedMenu({ menuItems, canTabTo }: IExpandedMen
           onClick={() => handleDropDownLinkClick(link?.fields?.TopMenu_DropDown_Link?.value?.text ?? '')}
         >
           <>
-            <Paragraph className={s.linkTitle}>{link?.fields?.TopMenu_DropDown_Link?.value.text}</Paragraph>
-            <Paragraph className={s.linkDescription} size="small" weight="regular">
+            <Paragraph >{link?.fields?.TopMenu_DropDown_Link?.value.text}</Paragraph>
+            <Paragraph  size="small" weight="regular">
               {link?.fields?.TopMenu_DropDown_Link_Description?.value}
             </Paragraph>
           </>
@@ -52,7 +52,7 @@ export default function RenderExpandedMenu({ menuItems, canTabTo }: IExpandedMen
 
   const RenderSection = ({ section, canTabTo }: IEXpandedMenuElement) => {
     return (
-      <div className={s.dropdownSection}>
+      <div >
         {section?.fields?.item?.DropDownSectionTitle?.value && (
           <H5>{section?.fields?.item?.DropDownSectionTitle?.value}</H5>
         )}
@@ -77,7 +77,7 @@ export default function RenderExpandedMenu({ menuItems, canTabTo }: IExpandedMen
   }
 
   return (
-    <div className={s.expandedMenuContainer}>
+    <div >
       {menuItems.map(
         (section: ITopMenu_Child): ReactElement => (
           <RenderDropDown key={section.id} canTabTo={canTabTo} section={section} />

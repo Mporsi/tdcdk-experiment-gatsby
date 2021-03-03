@@ -195,16 +195,16 @@ export default function GenericForm(props: IGenericForm): ReactElement {
     const success = status === statusEnum.SUCCESS
     return (
       <Modal close={closeModal}>
-        <div className={s.modalWrapper}>
-          <div className={s.modalContent}>
-            <H3 className={s.modalTitle}>
+        <div >
+          <div >
+            <H3 >
               {success ? SubmitAction_SubmitSuccessHeader?.value : SubmitAction_SubmitErrorHeader?.value}
             </H3>
-            <Paragraph className={s.modalParagraph}>
+            <Paragraph >
               {success ? SubmitAction_SubmitSuccessBody?.value : SubmitAction_SubmitErrorBody?.value}
             </Paragraph>
             <a href="https://tdc.dk">
-              <DefaultButton onClick={closeModal} className={s.modalButton}>
+              <DefaultButton onClick={closeModal} >
                 {success ? SubmitAction_SubmitSuccessButtonLabel?.value : SubmitAction_SubmitErrorButtonLabel?.value}
               </DefaultButton>
             </a>
@@ -219,7 +219,7 @@ export default function GenericForm(props: IGenericForm): ReactElement {
   }
 
   return (
-    <div className={s.formWrapper}>
+    <div >
       <Paragraph>{Form_Description.value}</Paragraph>
 
       {formsDataArray.map((el, i) => (
@@ -234,9 +234,9 @@ export default function GenericForm(props: IGenericForm): ReactElement {
         />
       ))}
       <PositiveButton onClick={submit}>
-        <div className={`${s.submitButton} ${status === statusEnum.PENDING && s.submitButtonLoading}`}>
-          <div className={s.submitButtonText}>{SubmitAction_SubmitButtonLabel.value}</div>
-          <div className={s.submitButtonSpinner}>
+        <div >
+          <div >{SubmitAction_SubmitButtonLabel.value}</div>
+          <div >
             <Spinner />
           </div>
         </div>

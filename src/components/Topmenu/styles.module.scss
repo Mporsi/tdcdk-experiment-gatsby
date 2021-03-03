@@ -1,7 +1,7 @@
-@import "node_modules/@tdcerhverv/parrotfish/dist/colors-design-token";
-@import "node_modules/@tdcerhverv/sass-utils/_util";
-@import "src/assets/css/helpers/_mq";
-@import "src/assets/css/helpers/_target-ie";
+
+
+
+
 
 @mixin translatedLinksFix() {
   // fix for Links in top menu not working after page has been translated in Chrome
